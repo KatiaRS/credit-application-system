@@ -22,7 +22,7 @@ class CreditService(
         this.creditRepository.findAllByCustomerId(customerId)        //Using @Query
 
 
-    override fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {     //o retorno do crédito tem que ser somente o meu
+    override  fun findByCreditCode(customerId: Long, creditCode: UUID): Credit {     //o retorno do crédito tem que ser somente o meu
         val credit: Credit = (this.creditRepository.findByCreditCode(creditCode)     //Named Queries (JPA)- findBy
             ?: throw RuntimeException("Creditcode $creditCode not found"))
         return if (credit.customer?.id == customerId) credit else throw RuntimeException(" Contact admin")

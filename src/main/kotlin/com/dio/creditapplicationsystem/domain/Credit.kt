@@ -30,6 +30,6 @@ data class Credit(
 
     @ManyToOne
     @JoinColumn(name = "customer")
-    var customer: Customer? = null,                         //ver se existe no banco de dados
+    var customer: Customer? = null                         //ver se existe no banco de dados
 
 )

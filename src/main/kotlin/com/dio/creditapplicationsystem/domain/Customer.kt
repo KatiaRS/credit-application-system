@@ -9,7 +9,7 @@ import java.util.UUID
 @Table(name = "Cliente")
 data class Customer(
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
     @Column(nullable = false)

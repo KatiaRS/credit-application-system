@@ -29,11 +29,13 @@ class CustomerController(
     fun deleteCustomer(@PathVariable id: Long) = this.customerService.delete(id)
 
     @PatchMapping
-    fun updateCustomer(@RequestParam(value = "customerId") id: Long,
-                       customerUpdateDto: CustomerUpdateDto): CustomerView {
-    val customer: Customer = this.customerService.findById(id)
-    val customerToUpdate: Customer = customerUpdateDto.toEntity(customer)
-    val customerUpdated: Customer = this.customerService.save(customerToUpdate)
-    return CustomerView(customerUpdated)
+    fun updateCustomer(
+        @RequestParam(value = "customerId") id: Long,
+        customerUpdateDto: CustomerUpdateDto
+    ): CustomerView {
+        val customer: Customer = this.customerService.findById(id)
+        val customerToUpdate: Customer = customerUpdateDto.toEntity(customer)
+        val customerUpdated: Customer = this.customerService.save(customerToUpdate)
+        return CustomerView(customerUpdated)
     }
 }

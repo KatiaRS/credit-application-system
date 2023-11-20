@@ -1,6 +1,5 @@
 package com.dio.creditapplicationsystem.rest.dto
 
-import com.dio.creditapplicationsystem.domain.Credit
 import java.math.BigDecimal
 import java.time.LocalDate
 
