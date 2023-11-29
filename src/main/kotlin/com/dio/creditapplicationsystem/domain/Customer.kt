@@ -6,7 +6,7 @@ import java.math.BigDecimal
 import java.util.UUID
 
 @Entity
-@Table(name = "Cliente")
+@Table(name = "Customer")
 data class Customer(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ data class Customer(
     var lastName: String = "",
 
     @Column(nullable = false, unique = true)
-    val cpf: String = "",
+    var cpf: String = "",
 
     @Column(nullable = false, unique = true)
     var email: String = "",
