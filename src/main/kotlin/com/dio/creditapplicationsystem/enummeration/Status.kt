@@ -1,6 +1,6 @@
 package com.dio.creditapplicationsystem.enummeration
 
-enum class StatusCredit {
+enum class Status {
     IN_PROGRESS,
     APPROVED,
     REJECT

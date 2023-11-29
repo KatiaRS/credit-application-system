@@ -1,6 +1,6 @@
 package com.dio.creditapplicationsystem.domain
 
-import com.dio.creditapplicationsystem.enummeration.StatusCredit
+import com.dio.creditapplicationsystem.enummeration.Status
 import jakarta.persistence.*
 import java.math.BigDecimal
 import java.time.LocalDate
@@ -20,16 +20,16 @@ data class Credit(
     val creditValue: BigDecimal = BigDecimal.ZERO,
 
     @Column(nullable = false)
-    val dayFirstIsntallment: LocalDate,                     //data primeira parcela
+    val dayFirstOfInstallment: LocalDate,                     //data primeira parcela
 
     @Column(nullable = false)
     val numberOfInstallments: Int = 0,
 
     @Enumerated
-    val statusCredit: StatusCredit = StatusCredit.IN_PROGRESS,
+    val status: Status = Status.IN_PROGRESS,
 
     @ManyToOne
     @JoinColumn(name = "customer")
-    var customer: Customer? = null,                         //ver se existe no banco de dados
+    var customer: Customer? = null                         //ver se existe no banco de dados
 
 )
